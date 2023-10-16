@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <catalogue name="Technical Books">
+        <book>
+            <title>Code: The Hidden Language of Computer Hardware and Software</title>
+            <author>Charles Petzold</author>
+            <isbn>978-0137909100</isbn>
+        </book>
+        <book>
+            <title>Python Crash Course</title>
+            <author>Matthes and Eric</author>
+            <isbn>978-1718502703</isbn>
+        </book>
+    </catalogue>
+
+    <catalogue name="Cookery Books">
+        <book>
+            <title>One: Simple One-Pan Wonders</title>
+            <author>Jamie Oliver </author>
+            <isbn>978-0241431108</isbn>
+        </book>
+        <book>
+            <title>Eataly: Contemporary Italian Cooking</title>
+            <author>Oscar Farinetti</author>
+            <isbn>978-0456789123</isbn>
+        </book>
+    </catalogue>
+</library>
