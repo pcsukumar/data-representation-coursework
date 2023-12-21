@@ -1,58 +1,83 @@
-<html>
-    <head>
-        <title>View books</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
-        <script src="./ajaxcalls.js"></script>
-        <!-- CSS only -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-    </head>
-    <body>
-        <h1>Books</h1>
-        <div><button id="button-showCreate" class="btn btn-primary mb-3" onclick="showCreate()">Create a book</button><br/><br/></div>
-        <div>
-            <table class="table table-striped" style="width: 55%;" id="bookTable">
-                <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>Price</th>
-                        <th>Update</th>
-                        <th>Delete</th>
-                </tr>
-                <!-- <tr id="1">
-                    <td>1</td>
-                    <td>Harry Potter does something</td>
-                    <td>JK Rowling</td>
-                    <td>12</td>
-                    <td><button onclick="showUpdate(this)">update</button></td>
-                    <td><button onclick="doDelete(this)">delete</button></td>
-                   
-                </tr> -->
-
-        </table>
-        <br/>
-        </div>
-        <div id="createUpdateForm" style="display:none">
-            <!-- spans are like divs but do not go onto a new line -->
-            <h2><span id="createLabel">Create a</span> <span id="updateLabel">Update this</span> Book</h2>
-            id <input type="text" name="id"><br/>
-            Title <input type="text" name="title"><br/>
-            Author <input type="text" name="author"><br/>
-            Price <input type="number" name="price"><br/>
-           
-            <span><button id="button-doCreate" onclick="doCreate()">Create</button></span>
- 			<span><button id="button-doUpdate" onclick="doUpdate()">Update</button></span>
-             <!-- "display:none" will make it hidden-->
-
-
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>View Books</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="./ajaxcalls.js"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <h1>Books</h1>
+    <div><button id="button-showCreate" class="btn btn-primary mb-3" onclick="showCreate()">Create a book</button><br/><br/></div>
+    
+    <div class="table-responsive" id="bookTable">
+      <table class="table table-striped" style="width: 75%;"> 
+           <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Price</th>
+              <th>Update</th>
+              <th>Delete</th>
+          </tr>
         
-    </body>
-    <script>
-        //console.log("hello world")
-        function showCreate(){
+          <tr>
+              <td>1</td>
+              <td>HTML and CSS: Design and Build Websites</td>
+              <td>Jon Duckett</td>
+              <td>22</td>
+              <td><button>Update</button></td>
+              <td><button>Delete</button></td>
+          </tr>
+        
+          
+      </table>
+    </div>
+
+    <div id= "createUpdateForm" style="display:none" class="mt-3">
+        <h2><span id="createLabel">Create a</span> <span id="updateLabel">Update this</span> Book</h2>
+      <form>
+        <div class="row">
+          <div class="col-md-2 mb-3">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="author">Author</label>
+            <input type="text" class="form-control" id="author" name="author">
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" name="price">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="status">Status</label>
+          <select class="form-select w-50" id="status" name="status">
+            <option value="instock">In stock</option>
+            <option value="outstock">Out of stock</option>
+            <option value="other">Out of print</option>
+          </select>
+        </div>
+        <span><button id="button-doCreate" class="btn btn-primary mb-3" onclick="doCreate()">Create</button></span>
+ 		<span><button id="button-doUpdate" class="btn btn-primary mb-3" onclick="doUpdate()">Update</button></span>
+      </form>     
+
+    </div>
+
+</div>
+
+  <script>
+   //console.log("hello world")
+   function showCreate(){
             document.getElementById("createUpdateForm").style.display = "block"
             
             document.getElementById("button-doCreate").style.display = "block"
@@ -239,7 +264,11 @@
             return "done"
         }
          getAll(processGetAllResponse)
-
         
-    </script>
+
+</script>
+
+
+    
+</body>
 </html>
