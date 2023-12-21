@@ -73,7 +73,6 @@
     }
 
 
-
     // testing code
     
     function processGetAllResponse(result){
